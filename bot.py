@@ -19,7 +19,7 @@ import pyjokes
 # Set our name and version.
 name = "Python3Bot"
 version = "0.2-wiki"
-cmd = "!"
+cmd = "."
 
 def error(error, fatal = False):
 	""" Prints error to stdout, flusing the output, and exiting if it's a fatal error. """
