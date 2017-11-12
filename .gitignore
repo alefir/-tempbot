@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # Bot info extensions
-*.dat
+.dat
 
 # C extensions
 *.so
