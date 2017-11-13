@@ -235,6 +235,14 @@ class Bot(pydle.Client):
 			else:
 				self.__respond(target, source, "[YT] Sorry, you need to tell me what you want")
 
+		if message.startswith(cmd+"say"):
+			host = yield self.whois(source)
+			if self.is_admin(target, host['account']):
+			    args = message.split(' ', maxsplit=2)
+			    if len(args) == 3:
+			    	self.__respond(args[1], args[1], args[2])
+			    else:
+                                self.__respond(target, source, "[SAY] you did the command wrong")
 
 		if message.startswith(cmd+"wiki"):
 			args = message.split(' ', maxsplit=1)
@@ -486,9 +494,14 @@ class Bot(pydle.Client):
 			else:
 				self.__respond(target, source, "{}: You must be the bot owner to execute that command.".format(source))
 
-		if message == cmd+"nick":
-			self.rawmsg("NICK", self.config.nick)
-			self.__respond(target, source, "{}: Nick changed.".format(source))
+		if message.startswith(cmd+"nick"):
+			host = yield self.whois(source)
+			if self.is_admin(target, host['account']):
+			    args = message.split(' ')
+			    if len(args) == 2:
+			        self.rawmsg("NICK", args[1])
+			    else:
+			        self.rawmsg("NICK", self.config.nick)
 
 		if message == cmd+"help":
 			# Please leave this here.
