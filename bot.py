@@ -486,6 +486,9 @@ class Bot(pydle.Client):
 				i += 1
 			self.notice(source, "End of bot channel list.")
 
+		if message == cmd+"git":
+                    self.__respond(target, source, "Take a look in my panties at http://github.com/alefir/bott0m")
+
 		if message == cmd+"ghost":
 			host = yield self.whois(source)
 			if host['account'] == self.config.owner:
