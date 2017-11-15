@@ -19,7 +19,7 @@ import pyjokes
 # Set our name and version.
 name = "Python3Bot"
 version = "0.2-wiki"
-cmd = "."
+cmd = "`"
 
 def error(error, fatal = False):
     """ Prints error to stdout, flushing the output, and exiting if it's a fatal error. """
@@ -486,36 +486,36 @@ class Bot(pydle.Client):
             helptext = "" \
             "Command List:\n" \
             " <name>    | <arguments>                   | <description>\n" \
-            ".version   |                               | Displays the version information of the bot\n" \
-            ".help      |                               | Shows this help\n" \
-            ".quit      |                               | Kills the bot\n" \
-            ".remove    | <nick> [reason]               | Removes <nick> from channel with optional [reason]\n" \
-            ".ban       | <mask> [ <nick> [reason] ]    | Bans the mask <mask> and can remove <nick> with [reason] if specified\n" \
-            ".rmban     | <number>                      | Lifts ban specified by <number>\n" \
-            ".lsban     |                               | Lists the banlist\n" \
-            ".unban     | <mask>                        | Unbans the specified <mask>\n" \
-            ".quiet     | <mask>                        | Sets quiet on <mask>\n" \
-            ".unquiet   | <mask>                        | Removes quiet on <mask>\n" \
-            ".op        | [nick]                        | Ops [nick] if specified, otherwise you\n" \
-            ".deop      | [nick]                        | Deops [nick] if specified, otherwise you\n" \
-            ".voice     | [nick]                        | Voices [nick] if specified, otherwise you\n" \
-            ".devoice   | [nick]                        | Devoices [nick] if specified, otherwise you\n" \
-            ".exempt    | [hostmask]                    | Sets ban exempt on [hostmask] if specified, otherwise you\n" \
-            ".unexempt  | [hostmask]                    | Removes ban exempt on [hostmask] if specified, otherwise you\n" \
-            ".admin     | <account>                     | Adds <account> as admin in this channel\n" \
-            ".rmadmin   | <number>                      | Removes admin specified by <number>\n" \
-            ".lsadmin   |                               | Lists all admins\n" \
-            ".tell      | <nick> <message>              | Tells me to pass <message> onto <nick> next time they type a message\n" \
-            ".rmtell    | <number>                      | Removes a tell by <number>. You can only remove you own tells (except admins)\n" \
-            ".lstell    |                               | Lists all tells. Message only displayed on your own tells\n" \
-            ".ghost     |                               | Disconnect bot ghost\n" \
-            ".nick      | [nick]                        | Changes bot nick to [nick] if specified, otherwise to defualt\n" \
+            "`version   |                               | Displays the version information of the bot\n" \
+            "`help      |                               | Shows this help\n" \
+            "`quit      |                               | Kills the bot\n" \
+            "`remove    | <nick> [reason]               | Removes <nick> from channel with optional [reason]\n" \
+            "`ban       | <mask> [ <nick> [reason] ]    | Bans the mask <mask> and can remove <nick> with [reason] if specified\n" \
+            "`rmban     | <number>                      | Lifts ban specified by <number>\n" \
+            "`lsban     |                               | Lists the banlist\n" \
+            "`unban     | <mask>                        | Unbans the specified <mask>\n" \
+            "`quiet     | <mask>                        | Sets quiet on <mask>\n" \
+            "`unquiet   | <mask>                        | Removes quiet on <mask>\n" \
+            "`op        | [nick]                        | Ops [nick] if specified, otherwise you\n" \
+            "`deop      | [nick]                        | Deops [nick] if specified, otherwise you\n" \
+            "`voice     | [nick]                        | Voices [nick] if specified, otherwise you\n" \
+            "`devoice   | [nick]                        | Devoices [nick] if specified, otherwise you\n" \
+            "`exempt    | [hostmask]                    | Sets ban exempt on [hostmask] if specified, otherwise you\n" \
+            "`unexempt  | [hostmask]                    | Removes ban exempt on [hostmask] if specified, otherwise you\n" \
+            "`admin     | <account>                     | Adds <account> as admin in this channel\n" \
+            "`rmadmin   | <number>                      | Removes admin specified by <number>\n" \
+            "`lsadmin   |                               | Lists all admins\n" \
+            "`tell      | <nick> <message>              | Tells me to pass <message> onto <nick> next time they type a message\n" \
+            "`rmtell    | <number>                      | Removes a tell by <number>. You can only remove you own tells (except admins)\n" \
+            "`lstell    |                               | Lists all tells. Message only displayed on your own tells\n" \
+            "`ghost     |                               | Disconnect bot ghost\n" \
+            "`nick      | [nick]                        | Changes bot nick to [nick] if specified, otherwise to defualt\n" \
             "           |                               |\n" \
-            ".wiki      | <query | random>              | Searches wikipedia for <query> or shows a <random> page\n" \
-            ".yt        | <query>                       | Searches YouTube for <query>\n" \
-            ".wolf      | <query>                       | Queries Wolfram|Alpha for <query>\n" \
-            ".fortune   |                               | Tells a fortune\n" \
-            ".joke      |                               | Tells a joke\n" \
+            "`wiki      | <query | random>              | Searches wikipedia for <query> or shows a <random> page\n" \
+            "`yt        | <query>                       | Searches YouTube for <query>\n" \
+            "`wolf      | <query>                       | Queries Wolfram|Alpha for <query>\n" \
+            "`fortune   |                               | Tells a fortune\n" \
+            "`joke      |                               | Tells a joke\n" \
             "End of help"
 
             self.notice(source, helptext)
