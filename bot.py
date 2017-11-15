@@ -466,7 +466,11 @@ class Bot(pydle.Client):
             self.notice(source, "End of bot channel list.")
 
         if message == cmd+"git":
-            self.__respond(target, source, "Take a look in my panties at http://github.com/alefir/bott0m")
+            args = message.split(' ')
+            if len(args) == 2:
+                self.__respond(target, source, "https://github.com/{}".format(args[1]))
+            else:
+                self.__respond(target, source, "Take a look in my panties at https://github.com/alefir/bott0m")
 
         if message == cmd+"ghost":
             host = yield self.whois(source)
