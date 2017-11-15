@@ -534,7 +534,7 @@ class Bot(pydle.Client):
         super().on_message(target, source, message)
         self.__handle_internal(target, source, message)
         for each in self.plugin.plugin_commands:
-            value = each.pslit(":")
+            value = each.split(":")
             if message.startswith("!{}".format(value[0])):
                 module_obj = self.plugin.plugins[value[2]]
                 function_obj = getattr(module_obj, value[1])
