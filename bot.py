@@ -80,6 +80,9 @@ class Bot(pydle.Client):
     def __handle_internal(self, target, source, message):
         message = message.strip(' ')
 
+        if source == 'lurk':
+            return
+
         # Test for Links
         links = re.findall('(http[s]?:\/\/[^\s]*)', message)
         for link in links:
