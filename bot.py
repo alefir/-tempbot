@@ -24,7 +24,7 @@ cmd = "."
 def error(error, fatal = False):
     """ Prints error to stdout, flushing the output, and exiting if it's a fatal error. """
     if not fatal:
-        print("ERROR: {}".format(error), flish = True)
+        print("ERROR: {}".format(error), flush = True)
     else:
         print("FATAL ERROR: {}".format(error), flush = True)
         sys.exit(1)
@@ -225,7 +225,7 @@ class Bot(pydle.Client):
             if len(args) == 2:
                 if args[1] == "random":
                     try:
-                        self.__respond(target, source, "[Wiki] {}".format(wikipedia.summary(wikipedia.rnadom(pages=1), sentences=2)))
+                        self.__respond(target, source, "[Wiki] {}".format(wikipedia.summary(wikipedia.random(pages=1), sentences=2)))
                     except Exception as e:
                         print(str(e))
                 else:
@@ -253,7 +253,7 @@ class Bot(pydle.Client):
                     self.__respond(target, source, "[W|A] {}: {}".format(args[1], next(res.results).text))
                 except BaseException as e:
                     print(str(e))
-                    self.__respond("[W|A] Sorry, I didn't understand that")
+                    self.__respond(target, source, "[W|A] Sorry, I didn't understand that")
             else:
                 self.__respond(target, source, "[W|A] Sorry, you need to tell me what you want")
 
