@@ -465,7 +465,7 @@ class Bot(pydle.Client):
                 i += 1
             self.notice(source, "End of bot channel list.")
 
-        if message == cmd+"git":
+        if message.startswith( cmd+"git"):
             args = message.split(' ')
             if len(args) == 2:
                 self.__respond(target, source, "https://github.com/{}".format(args[1]))
